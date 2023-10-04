@@ -1,0 +1,409 @@
+main .SideBarMainClass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--c-darker);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 62px;
+    height: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: var(--i-padding);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 2;
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    border-right: solid 1px var(--c-lighter);
+}
+
+main .SideBarMainClass:hover,
+main .SideBarMainClass:active {
+    width: 200px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+main .SideBarMainClass .avatar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 10px;
+}
+
+main .SideBarMainClass .avatar .thumb {
+    border-radius: 50%;
+    width: 100px;
+    max-width: 40px !important;
+    height: 40px !important;
+}
+
+main .SideBarMainClass .avatar .name {
+    color: var(--c-elements);
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.EmpNo_Divition {
+    margin-top: -10px;
+    font-size: 14px;
+}
+
+main .SideBarMainClass:hover .avatar .name,
+main .SideBarMainClass:active .avatar .name {
+    opacity: 1;
+    visibility: visible;
+}
+
+main .SideBarMainClass .primary {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+}
+
+main .SideBarMainClass .primary .SideBarMainClass-item {
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--c-elements);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 8px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+main .SideBarMainClass:hover .primary .SideBarMainClass-item,
+main .SideBarMainClass:active .primary .SideBarMainClass-item {
+    width: 100%;
+    border-radius: var(--max-radius);
+}
+
+main .SideBarMainClass .primary .SideBarMainClass-item:hover {
+    background: var(--c-bg-elements);
+}
+
+main .SideBarMainClass .primary .SideBarMainClass-item span:first-child {
+    font-size: 21px;
+}
+
+main .SideBarMainClass .primary .SideBarMainClass-item .desc {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+main .SideBarMainClass:hover .primary .SideBarMainClass-item .desc,
+main .SideBarMainClass:active .primary .SideBarMainClass-item .desc {
+    opacity: 1;
+    visibility: visible;
+}
+
+main .SideBarMainClass .expander {
+    color: var(--c-elements);
+    font-size: 24px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+main .SideBarMainClass:hover .expander,
+main .SideBarMainClass:active .expander {
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+main .topbar nav .SideBarMainClass-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 30px;
+    padding: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--c-elements);
+    border-radius: var(--max-radius);
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+main .topbar nav .SideBarMainClass-item:hover {
+    background: var(--c-bg-elements);
+}
+
+@media (max-width: 1020px) {
+    .SideBarMainClass {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .Mobile_View_SideMenu {
+        display: none;
+    }
+
+    .SideBarMainClass {
+        display: none;
+    }
+
+    main .SideBarMainClass {
+        width: 74px;
+        position: absolute;
+        top: 0 !important;
+        border-radius: var(--radius) 0 0 var(--radius);
+    }
+
+    main .SideBarMainClass:hover {
+        border-radius: var(--radius);
+    }
+
+    main .SideBarMainClass .avatar {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    main .SideBarMainClass .avatar .thumb {
+        width: 40px;
+        height: 40px !important;
+    }
+}
+
+.Mobile_View_SideMenu {
+    z-index: 100;
+}
+
+.Mobile_View_SideMenu .box-menu {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+    background: #49A4EB;
+    width: 60px;
+    height: 60px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, .3);
+    border-radius: 60px;
+    transition: height .4s;
+}
+
+.Mobile_View_SideMenu .full-menu {
+    height: 300px;
+}
+
+.Mobile_View_SideMenu .wrapper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.Mobile_View_SideMenu .hamburger {
+    position: absolute;
+    left: 22px;
+    top: 22px;
+    width: 16px;
+    height: 16px;
+}
+
+.Mobile_View_SideMenu .hamburger span {
+    position: absolute;
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    transition: all .3s;
+}
+
+.Mobile_View_SideMenu .hamburger span:nth-child(1) {
+    top: 3px;
+}
+
+.Mobile_View_SideMenu .hamburger span:nth-child(2) {
+    top: 8px;
+}
+
+.Mobile_View_SideMenu .hamburger span:nth-child(3) {
+    top: 8px;
+}
+
+.Mobile_View_SideMenu .hamburger span:nth-child(4) {
+    top: 13px;
+}
+
+.Mobile_View_SideMenu .hamburger.active span:nth-child(1) {
+    width: 0;
+    margin-left: 8px;
+}
+
+.Mobile_View_SideMenu .hamburger.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.Mobile_View_SideMenu .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.Mobile_View_SideMenu .hamburger.active span:nth-child(4) {
+    width: 0;
+    margin-left: 8px;
+}
+
+.Mobile_View_SideMenu .menu {
+    position: relative;
+    left: -9999px;
+}
+
+.Mobile_View_SideMenu .menu a {
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    width: 150px;
+    height: 58px;
+    line-height: 58px;
+    font-family: Ubuntu;
+}
+
+.Mobile_View_SideMenu .menu a::after {
+    content: '';
+    position: absolute;
+    left: 57px;
+    top: 29px;
+    height: 0px;
+    width: 3px;
+    background: #fff;
+    transition: height .3s, top .3s;
+}
+
+.Mobile_View_SideMenu .menu a.active::after {
+    top: 19px;
+    height: 20px;
+}
+
+.Mobile_View_SideMenu .menu a span {
+    opacity: 0;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.Mobile_View_SideMenu .menu a span.icon {
+    transform: scale(.5);
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    transition: transform .3s;
+}
+
+.Mobile_View_SideMenu .menu a span.text {
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, .3);
+    opacity: 0;
+    margin-left: 40px;
+    transition: margin .3s, opacity .3s, transform .3s;
+}
+
+.Mobile_View_SideMenu .full-menu .menu {
+    left: 0;
+}
+
+.Mobile_View_SideMenu .full-menu .menu a {}
+
+.Mobile_View_SideMenu .full-menu .menu a:hover span {
+    opacity: 1;
+}
+
+.Mobile_View_SideMenu .full-menu .menu a span {
+    opacity: .8;
+}
+
+.Mobile_View_SideMenu .full-menu .menu a span.icon {
+    transform: scale(1.1);
+}
+
+.Mobile_View_SideMenu .full-menu .menu a span.text {
+    margin-left: 25px;
+}
+
+.Mobile_View_SideMenu .full-menu .menu a:hover span.text {
+    transform: translateX(5px);
+    transition-delay: 0s;
+}
+
+.Mobile_View_SideMenu .menu a:nth-child(1) span {
+    transition: all .5s .1s, opacity .5s 0s, transform .5s 0s;
+}
+
+.Mobile_View_SideMenu .menu a:nth-child(2) span {
+    transition: all .5s .15s, opacity .5s 0s, transform .5s 0s;
+}
+
+.Mobile_View_SideMenu .menu a:nth-child(3) span {
+    transition: all .5s .2s, opacity .5s 0s, transform .5s 0s;
+}
+
+.Mobile_View_SideMenu .menu a:nth-child(4) span {
+    transition: all .5s .25s, opacity .5s 0s, transform .5s 0s;
+}

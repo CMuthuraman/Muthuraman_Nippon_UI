@@ -1,0 +1,517 @@
+:root {
+    --font: 'Montserrat', system-ui, sans-serif;
+    --max-width: 1400px;
+    --i-padding: 0.6rem;
+    --o-padding: 1.6rem;
+    --radius: 10px;
+    --max-radius: 40px;
+    --c-lighter: #b1d0e050;
+    --c-light: #b1d0e050;
+    --c-medium: #6998ab60;
+    --c-dark: #40688290;
+    --c-darker: #40688260;
+    --c-elements: #b1d0e0;
+    --c-bg-elements: #0004;
+    --c-card-main: #b1d0e090;
+    --c-card-side: #b1d0e040;
+}
+
+/* html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html::-webkit-scrollbar {
+    width: 6px;
+    background: #555555;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #151515;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} */
+
+.MainClass .active {
+    background: var(--c-bg-elements);
+}
+
+.MainClass {
+    margin: 0;
+    font-family: var(--font);
+    color: #fefefe;
+    background-color: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    width: auto;
+}
+
+.MainClass .video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.MainClass .video video {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.MainClass .container {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.MainClass main {
+    max-height: 100vh;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    padding-left: 10px;
+    padding-top: 75px;
+    position: relative;
+}
+
+
+
+
+.MainClass main .dashboard {
+    border-top: solid 1px var(--c-lighter);
+    background-color: var(--c-light);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    /* padding: var(--o-padding); */
+    display: -ms-grid;
+    display: grid;
+    grid-gap: var(--o-padding);
+    position: relative;
+    overflow: overlay;
+}
+
+.MainClass main .dashboard::-webkit-scrollbar,
+.MainClass main .side::-webkit-scrollbar {
+    width: 2px;
+    background: var(--c-darker);
+}
+
+.MainClass main .dashboard::-webkit-scrollbar-thumb,
+.MainClass main .side::-webkit-scrollbar-thumb {
+    background: var(--c-bg-elements);
+}
+
+.MainClass main .dashboard .cardcolumn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: var(--o-padding);
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
+}
+
+.MainClass main .dashboard .cardcolumn .card .content {
+    font-size: 14px;
+}
+
+.MainClass main .dashboard .cardcolumn .card span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    border-radius: 50%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.MainClass main .dashboard .cardcolumn .card span:hover {
+    color: var(--c-elements);
+    background: var(--c-bg-elements);
+}
+
+.MainClass main .dashboard .cardcolumn .card header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 4px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.MainClass main .dashboard .cardcolumn .card header a {
+    color: inherit;
+    text-decoration: none;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.MainClass main .dashboard .cardcolumn .card .meta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.MainClass main .side {
+    margin-top: 60px;
+    background-color: var(--c-medium);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    padding: var(--o-padding);
+    display: -ms-grid;
+    display: grid;
+    gap: var(--o-padding);
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    overflow: overlay;
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+}
+
+.MainClass main .dashboard .card,
+.MainClass main .side .card {
+    position: relative;
+    color: var(--c-elements);
+    padding: var(--i-padding);
+    background: var(--c-bg-elements);
+    border-radius: var(--radius);
+    -webkit-box-shadow: 0 4px 8px #0003;
+    box-shadow: 0 4px 8px #0003;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: solid 2px #0003;
+}
+
+.MainClass main .side .card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.MainClass main .side .card ul li {
+    padding: 6px 0;
+    border-bottom: solid 1px var(--c-bg-elements);
+}
+
+.MainClass main .side .card ul li:last-child {
+    border-bottom: none;
+}
+
+.MainClass main .side .weather .condition {
+    opacity: 0.65;
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    max-width: 200px;
+    width: 100%;
+    float: right;
+}
+
+.MainClass main .side .weather .content {
+    position: relative;
+    font-size: 3rem;
+    font-weight: 600;
+    min-height: 180px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-shadow: 1px 3px 0px #0008;
+}
+
+.MainClass main .side .weather .content .celsius {
+    position: relative;
+    top: -10px;
+    right: -4px;
+    font-size: 1.3rem;
+}
+
+.MainClass main .side .weather .meta {
+    border-top: solid 1px var(--c-bg-elements);
+    padding-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.MainClass main .side .weather .meta .datetime,
+.MainClass main .side .weather .meta .location {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.MainClass main .side .weather .meta .datetime .time {
+    font-weight: 600;
+}
+
+.MainClass main .ContainerBody {
+    width: 100vh;
+    padding: 10px;
+}
+
+.MainClass main .ContainerBody {
+    width: 100%;
+    padding: 10px;
+}
+
+
+@media (min-width: 1024px) {
+    :root {
+        --i-padding: 1rem;
+        /* --o-padding: 2rem; */
+    }
+
+    .MainClass main {
+        max-height: 100vh;
+        width: 100%;
+        display: -ms-grid;
+        display: grid;
+        padding-left: 62px;
+        padding-top: 0px;
+        position: relative;
+    }
+
+    .MainClass .container {
+        margin: var(--o-padding);
+        -webkit-box-shadow: 0 0px 1rem #0003;
+        box-shadow: 0 0px 1rem #0003;
+        overflow: hidden;
+    }
+
+    .MainClass main {
+        min-height: 500px;
+        max-height: calc(100vh - (2 * var(--o-padding)));
+        border-radius: var(--radius);
+        -ms-grid-columns: auto 380px;
+        /* grid-template-columns: 2fr 1fr; */
+        padding-left: 74px;
+    }
+
+    .MainClass main .dashboard {
+        margin-top: 72px;
+        border-top: unset;
+        margin-left: 10px;
+        margin-bottom: 11px;
+    }
+
+    .MainClass main .ContainerBody {
+        width: 100%;
+        overflow-x: hidden;
+        padding: 10px;
+    }
+
+    .MainClass {
+        margin: 0;
+        font-family: var(--font);
+        color: #fefefe;
+        background-color: transparent;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        min-height: 100vh;
+        min-height: 100vh;
+        position: relative;
+        width: 100%;
+    }
+
+    .MobileMenu {
+        display: none;
+    }
+}
+
+.MainClass .ProfileCard {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #556177;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 0px 10px white;
+}
+
+.MainClass .SideMenuButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    background-color: white;
+    padding: '10px';
+    margin: 10px 0px 10px 0px;
+    border-radius: 50px;
+    color: black;
+    padding: 10px;
+}
+
+.MainClass .SideMenuButton_active {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    background-color: #0471A6;
+    padding: '10px';
+    margin: 10px 0px 10px 0px;
+    border-radius: 50px;
+    color: white;
+    padding: 10px;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ProfileTag {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* Styles for the menu button */
+.menu-btn {
+    background-color: #e30425;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+    cursor: pointer;
+    height: 56px;
+    left: 24px;
+    bottom: 16px;
+    position: fixed;
+    width: 56px;
+    z-index: 10;
+}
+
+/* Styles for the menu */
+.menu {
+    bottom: 0;
+    background-color: #40688260;
+    left: 0;
+    margin: 0;
+    padding: 32px;
+    position: fixed;
+    top: 0;
+    width: 288px;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform .2s linear;
+    z-index: 10;
+}
+
+/* Creating the hamburger/hotdog icon in CSS */
+.menu-btn li {
+    background-color: #ffffff;
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 16px;
+    top: 0;
+    transition: all .3s ease-in-out;
+}
+
+/* The following two lines set the three lines of our hamburger/hotdog icon apart */
+.menu-btn li:first-child {
+    transform: translate3d(0, -4px, 0);
+}
+
+.menu-btn li:last-child {
+    transform: translate3d(0, 4px, 0);
+}
+
+/* We're now in the animation territory. These are the classes you toggle on with our Javascript function. */
+.menu-btn--on li:first-child {
+    transform: rotate(135deg) translate3d(0, 0, 0);
+}
+
+.menu-btn--on li:last-child {
+    transform: rotate(-135deg) translate3d(0, 0, 0);
+}
+
+.menu-btn--on li:nth-child(2) {
+    opacity: 0;
+}
+
+.menu--open {
+    transform: translate3d(0, 0, 0);
+}

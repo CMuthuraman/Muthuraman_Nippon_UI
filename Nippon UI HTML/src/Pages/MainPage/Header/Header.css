@@ -1,0 +1,237 @@
+main .topbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: calc(100% - 62px);
+  margin-left: 62px;
+  height: 60px;
+  z-index: 1;
+  background: var(--c-dark);
+  border-bottom: solid 1px var(--c-lighter);
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
+  padding: 0 var(--o-padding);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 10px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+main .topbar .current {
+  color: var(--c-elements);
+  font-size: 24px;
+  font-weight: 700;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* filter: drop-shadow(2px 2px 2px white); */
+}
+
+main .topbar .search {
+  cursor: pointer;
+  color: var(--c-elements);
+  border-radius: 50%;
+  max-width: 40px;
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+main .topbar .search:hover,
+main.search .topbar .search {
+  background: var(--c-bg-elements);
+}
+
+main.search .topbar .search {
+  border-radius: var(--max-radius);
+  max-width: 200px;
+  cursor: default;
+}
+
+main .topbar .search label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 24px;
+  cursor: inherit;
+}
+
+main .topbar .search .bar {
+  color: var(--c-elements);
+  background: unset;
+  width: 100%;
+  padding: 1px 10px 0 34px;
+  font-size: 16px;
+  border: unset;
+  outline: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+main.search .topbar .search .bar {
+  opacity: 1;
+  visibility: visible;
+  touch-action: none;
+}
+
+main .topbar .search .bar::-webkit-input-placeholder {
+  font-family: var(--font);
+  color: var(--c-elements);
+}
+
+main .topbar .search .bar::-moz-placeholder {
+  font-family: var(--font);
+  color: var(--c-elements);
+}
+
+main .topbar .search .bar:-ms-input-placeholder {
+  font-family: var(--font);
+  color: var(--c-elements);
+}
+
+main .topbar .search .bar::-ms-input-placeholder {
+  font-family: var(--font);
+  color: var(--c-elements);
+}
+
+main .topbar .search .bar::placeholder {
+  font-family: var(--font);
+  color: var(--c-elements);
+}
+
+main .topbar nav {
+  overflow: overlay;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+}
+
+main .topbar nav::-webkit-scrollbar {
+  height: 2px;
+}
+
+main .topbar nav::-webkit-scrollbar-thumb {
+  background: var(--c-bg-elements);
+}
+
+main .topbar nav .menu-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 30px;
+  padding: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--c-elements);
+  border-radius: var(--max-radius);
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+main .topbar nav .menu-item:hover {
+  background: var(--c-bg-elements);
+}
+
+@media (max-width: 1020px) {
+  main .topbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: calc(100% - 0px);
+    margin-left: 0px;
+    height: 60px;
+    z-index: 1;
+    background: var(--c-dark);
+    border-bottom: solid 1px var(--c-lighter);
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    padding: 0 var(--o-padding);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 10px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  main .topbar {
+    position: absolute;
+    width: calc(100% - 74px);
+    margin-left: 74px;
+    border-radius: 0 var(--radius) 0 0;
+  }
+
+  main .topbar .search {
+    margin-right: unset;
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    /* order: -1; */
+    max-width: 200px;
+    border-radius: var(--max-radius);
+    cursor: default;
+    background: var(--c-bg-elements);
+  }
+
+  main .topbar .search .bar {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
